@@ -1,0 +1,7 @@
+.vscode
+*.rbxl
+*.rbxlx
+*.rbxlx.lock
+*.rbxl.lock
+output/
+*.pyc

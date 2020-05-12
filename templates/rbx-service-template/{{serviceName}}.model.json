@@ -1,0 +1,14 @@
+{
+    "ClassName": "Folder",
+    "Children": [
+        {% for event in events %}{
+            "Name": "Request{{ event.name }}",
+            "ClassName": "RemoteEvent"
+        },
+        {
+            "Name": "Receive{{ event.name }}",
+            "ClassName": "RemoteEvent"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
