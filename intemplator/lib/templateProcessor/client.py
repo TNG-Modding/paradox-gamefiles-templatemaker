@@ -1,10 +1,3 @@
-# Template Processor
-import os
-import jinja2
-import json
-import errno
-import shutil
-
 def CopyTemplate(sourceDirectory, outputDirectory):
     try:
         if os.path.isdir(outputDirectory):
@@ -55,11 +48,3 @@ def RenderTemplate(newFilePath, inputFile):
 
 def GetTemplateFilePath(templateName):
     return os.path.join(os.path.dirname(__file__),'templates/' + templateName)
-
-def ProcessTemplate(templateName, inputFilePath, outputPath):
-    templateFilePath = GetTemplateFilePath(templateName)
-    inputData = GetInputFile(inputFilePath)
-    serviceName = inputData["serviceName"]
-    newFilePath = os.path.join(outputPath, serviceName)
-    CopyTemplate(templateFilePath, newFilePath)
-    RenderTemplate(newFilePath, inputData)
