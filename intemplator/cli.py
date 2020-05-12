@@ -1,5 +1,5 @@
 import click
-from .lib import templateProcessor as templatorProcessor
+from .lib import templateProcessor as operations
 
 @click.group()
 def cli():
@@ -12,8 +12,14 @@ def cli():
 @click.option('--output', prompt='Output path', help='The path of where the templated service will go.')
 def run(template, input, output):
     """Produces a set of files based on a template and input file."""
-    print("Create template")
-    # ProcessTemplate(template, input, output)
+    print("The Intemplator issues an order!\n")
+    operations.ProcessOrder(template, input, output)
+
+@cli.command()
+def go():
+    """Process the intemplator.json file here."""
+    print("The Intemplator issues their orders!\n")
+    operations.ProcessOrders()
 
 if __name__ == '__main__':
     cli()
