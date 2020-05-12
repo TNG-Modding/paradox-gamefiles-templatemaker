@@ -10,6 +10,7 @@ Create bodies of code with templates and json data blobs. Templates are combined
 
 - Define orders as are collections of calls to Intemplator in the `intemplator.json` file of your current directory. You must have "orders" defined.
 
+```
     {
         "orders": [
             {
@@ -22,9 +23,11 @@ Create bodies of code with templates and json data blobs. Templates are combined
             }
         ]
     }
+```
 
 - Define specs files that contain content that will populate your spec. You must have "specs" defined. The content is otherwise arbitrary.
 
+```
     {
         "specs": [
             {
@@ -34,5 +37,6 @@ Create bodies of code with templates and json data blobs. Templates are combined
             }
         ]
     }
+```
 
 - Run `intemplator go` or `intemplator run --template rbx-service-template --input ./specs/dischargeSpec.json --output ~/robowar/ReplicatedStorage/Source`
