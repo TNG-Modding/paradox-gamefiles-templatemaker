@@ -4,6 +4,20 @@ from . import fileReader as fileReader
 from . import fileWriter as fileWriter
 from . import templateRenderer as templateRenderer
 
+def ProcessTemplateForSpec(templateFilePath, spec, outputPath, dumpContents):
+    print("Writing %s using %s to %s" % (spec["varname"], templateFilePath, outputPath))
+
+    tempOutputDirectoryPath = "./%s" % (spec["varname"])
+
+    fileWriter.CreateOrReplaceDirectoryWithFolder(templateFilePath, tempOutputDirectoryPath)
+    templateRenderer.RenderTemplate(tempOutputDirectoryPath, spec)
+    
+    if dumpContents:
+        fileWriter.DumpFolderContentsIntoDirectory(tempOutputDirectoryPath, outputPath)
+        fileWriter.RemoveDirectory(tempOutputDirectoryPath)
+    else:
+        fileWriter.MoveDirectory(tempOutputDirectoryPath, outputPath)
+
 def ProcessOrder (templateFilePath, specFilePath, outputPath, dumpContents):
     
     # print(templateFilePath)
@@ -12,19 +26,13 @@ def ProcessOrder (templateFilePath, specFilePath, outputPath, dumpContents):
     
     specs = fileReader.ReadJson(specFilePath)
     
-    for spec in specs["specs"]:
-        print("Writing %s using %s to %s" % (spec["varname"], templateFilePath, outputPath))
-
-        tempOutputDirectoryPath = "./%s" % (spec["varname"])
-
-        fileWriter.CreateOrReplaceDirectoryWithFolder(templateFilePath, tempOutputDirectoryPath)
-        templateRenderer.RenderTemplate(tempOutputDirectoryPath, spec)
-        
-        if dumpContents:
-            fileWriter.DumpFolderContentsIntoDirectory(tempOutputDirectoryPath, outputPath)
-            fileWriter.RemoveDirectory(tempOutputDirectoryPath)
-        else:
-            fileWriter.MoveDirectory(tempOutputDirectoryPath, outputPath)
+    if "specs" in specs:
+        # Series of specs in the file
+        for spec in specs["specs"]:
+            ProcessTemplateForSpec(templateFilePath, spec, outputPath, dumpContents)
+    else:
+        # Only one spec in the file
+        ProcessTemplateForSpec(templateFilePath, specs, outputPath, dumpContents)
 
 def ProcessOrders ():
     intemplator = fileReader.ReadJson("intemplator.json")
