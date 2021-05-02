@@ -1,6 +1,7 @@
 import errno
 import shutil
 import os
+import codecs
 
 def DumpFolderContentsIntoDirectory(sourceDirectory, outputDirectory):    
     files = os.listdir(sourceDirectory)
@@ -32,7 +33,8 @@ def RemoveDirectory (directoryPath):
     except OSError as e:
         print ("Error: %s - %s." % (e.filename, e.strerror))
 
-def WriteFileContents (filepath, contents):
-    file = open(filepath, 'w')
+def WriteFileContents (filepath, contents, isBom):
+    encoding = isBom and 'utf-8-sig' or 'utf-8'
+    file = codecs.open(filepath, 'w', encoding)
     file.write(contents)
     file.close()
