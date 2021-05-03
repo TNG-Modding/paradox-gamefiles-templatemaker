@@ -34,5 +34,6 @@ def ProcessOrders ():
     intemplator = fileReader.ReadJson("intemplator.json")
     
     for order in intemplator["orders"]:
-        print("Processing order for %s" % (order["name"]))
-        ProcessOrder(order["templateDirectoryPath"], order["specFilePath"], order["outputDirectoryPath"], order["dumpContents"], order["isBom"])
+        if order["disabled"] == False:
+            print("Processing order for %s" % (order["name"]))
+            ProcessOrder(order["templateDirectoryPath"], order["specFilePath"], order["outputDirectoryPath"], order["dumpContents"], order["isBom"])
