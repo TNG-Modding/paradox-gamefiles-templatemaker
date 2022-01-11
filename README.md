@@ -1,6 +1,6 @@
 # Intemplator
 
-Create bodies of code with templates and json data blobs. Templates are combined with specs to create 
+Create bodies of code with templates and json data blobs. Templates are combined with specs to create the files you need.
 
 ## Requirements
 
