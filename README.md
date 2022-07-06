@@ -9,11 +9,11 @@ Generate hundreds of Stellaris modding files effortlessly using Jinja2 templates
 - `cd` into the repo.
 - `python setup.py install`
 
-## Directions
+## Example of Creating a Faction for Every Ethic
 
 - Define a template file (one for the faction file, one for static modifiers, one for localisation, etc) using Jinja2 python syntax, like so:
 
-`"./templates/faction/{{varname}}_faction.txt"
+`"./templates/faction/{{varname}}_faction.txt"`
 ```
 ##############################
 # {{Faction}} Faction
