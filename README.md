@@ -2,9 +2,12 @@
 
 Generate hundreds of Stellaris modding files effortlessly using Jinja2 templates and json. Need a common file, localisation file, and static modifier for every ethic, for every shipset, for every component? Child's play.
 
-## Requirements
+## Installation
 
 - Install python.
+- Checkout this repo.
+- `cd` into the repo.
+- `python setup.py install`
 
 ## Directions
 
