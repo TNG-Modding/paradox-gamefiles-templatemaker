@@ -1,6 +1,6 @@
 # Intemplator
 
-Generate hundreds of Stellaris modding files effortlessly using templates and json. Need a common file, localisation file, and static modifier for every ethic, for every shipset, for every component? Child's play.
+Generate hundreds of Stellaris modding files effortlessly using Jinja2 templates and json. Need a common file, localisation file, and static modifier for every ethic, for every shipset, for every component? Child's play.
 
 ## Requirements
 
