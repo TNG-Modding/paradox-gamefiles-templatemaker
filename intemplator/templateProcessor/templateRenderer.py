@@ -1,10 +1,10 @@
 import jinja2
 import os
 
-from . import fileWriter as fileWriter
+from . import fileWriter
 
-def ProcessCopiedTemplate(outputPath):
-    for path, dirs, files in os.walk(PATH):
+def processCopiedTemplate(outputPath):
+    for path, dirs, files in os.walk(outputPath):
         for filename in files:
             fullpath = os.path.join(path, filename)
             
@@ -14,9 +14,9 @@ def ProcessCopiedTemplate(outputPath):
             templateFile.close()
 
             with open(fullpath, 'w') as f:
-                f.write(data)
+                f.write(contents)
 
-def RenderTemplate(newFilePath, inputFile, isBom):    
+def renderTemplate(newFilePath, inputFile, isBom):    
     jinjaEnvironment = jinja2.Environment(loader = jinja2.FileSystemLoader(newFilePath))
     
     for root, dirs, files in os.walk(newFilePath):
@@ -29,7 +29,7 @@ def RenderTemplate(newFilePath, inputFile, isBom):
             template = jinjaEnvironment.get_template(relativeTemplatePath)
             templatedContents = template.render(inputFile)
 
-            fileWriter.WriteFileContents(filepath, templatedContents, isBom)
+            fileWriter.writeFileContents(filepath, templatedContents, isBom)
             
             fileNameTemplate = jinja2.Environment(loader=jinja2.BaseLoader).from_string(file)
             newFileName = fileNameTemplate.render(inputFile)

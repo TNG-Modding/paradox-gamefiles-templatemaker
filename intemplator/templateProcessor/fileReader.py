@@ -1,9 +1,10 @@
 import json
+import os
 
-def GetTemplateFilePath(templateName):
+def getTemplateFilePath(templateName):
     return os.path.join(os.path.dirname(__file__),'templates/' + templateName)
 
-def ReadJson (path):
+def readJson(path):
     with open(path, 'r') as jsonFile:
         data = json.load(jsonFile)
         return data
