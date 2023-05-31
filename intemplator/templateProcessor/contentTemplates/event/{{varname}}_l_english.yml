@@ -1,0 +1,4 @@
+l_english:
+
+ {{varname}}.1:0 "{{displayName}}"
+ {{varname}}.1.desc:0 "{{desc}}"

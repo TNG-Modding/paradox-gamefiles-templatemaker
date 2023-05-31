@@ -21,3 +21,25 @@ def go():
     """Process the intemplator.json file here."""
     print("The Intemplator issues their orders!\n")
     templateProcessor.processOrders()
+
+@cli.group()
+def create():
+    """Create Content."""
+    pass
+
+@cli.command()
+def init():
+    """Initialize a Project"""
+    templateProcessor.setup()
+
+@create.command()
+@click.option('--name', prompt='Display Name', required=True, help='The name of the resource.')
+def resource(name):
+    """Create a Resource"""
+    templateProcessor.createNewOrder(name, "RESOURCE")
+
+@create.command()
+@click.option('--name', prompt='Display Name', required=True, help='The name of the resource.')
+def event(name):
+    """Create an Event"""
+    templateProcessor.createNewOrder(name, "EVENT")

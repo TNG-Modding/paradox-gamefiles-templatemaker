@@ -38,3 +38,4 @@ def writeFileContents(filepath, contents, isBom):
     file = codecs.open(filepath, 'w', encoding)
     file.write(contents)
     file.close()
+

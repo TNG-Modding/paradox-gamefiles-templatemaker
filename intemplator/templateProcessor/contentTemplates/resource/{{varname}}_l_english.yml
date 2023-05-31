@@ -1,0 +1,6 @@
+﻿l_english:
+
+ {{varname}}:0 "{{displayName}}"
+ {{varname}}_desc:0 "{{desc}}."
+ mod_country_base_{{varname}}_produces_add:0 "Monthly {{displayName}} Production"
+ mod_country_{{varname}}_produces_add:0 "Monthly {{displayName}} Production"

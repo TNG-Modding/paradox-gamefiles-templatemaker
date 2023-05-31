@@ -1,0 +1,7 @@
+namespace = {{varname}}_events
+
+country_event = {
+    id = {{varname}}_events.1
+    hide_window = yes
+    is_triggered_only = yes
+}

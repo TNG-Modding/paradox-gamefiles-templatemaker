@@ -1,0 +1,15 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_resource_{{varname}}"
+		texturefile = "gfx/interface/icons/resources/{{varname}}.dds"
+	}
+	spriteType = {
+		name = "GFX_resource_{{varname}}_large"
+		texturefile = "gfx/interface/icons/resources/{{varname}}_large.dds"
+	}
+	spriteType = {
+		name = "GFX_resource_{{varname}}_gray"
+		texturefile = "gfx/interface/icons/resources/{{varname}}_gray.dds"
+	}
+}
+
