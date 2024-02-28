@@ -62,6 +62,7 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 
 - Create a folder called for our intemplator files in the root directory of your mod repo with an `order.json` file in it.
 - Create an order for every template+spec pair. For instance, this order create a `common/pop_faction_type`
+
 `./intemplator/orders.json`
 ```
 [
