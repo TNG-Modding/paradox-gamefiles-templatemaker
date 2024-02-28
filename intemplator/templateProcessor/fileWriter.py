@@ -5,6 +5,7 @@ import codecs
 
 def dumpFolderContentsIntoDirectory(sourceDirectory, outputDirectory):    
     files = os.listdir(sourceDirectory)
+    os.makedirs(outputDirectory, exist_ok=True)
     for f in files:
         oldFileLocation = os.path.join(sourceDirectory, f)
         newFileLocation = os.path.join(outputDirectory, f)
