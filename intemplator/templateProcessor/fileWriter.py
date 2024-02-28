@@ -36,6 +36,8 @@ def removeDirectory(directoryPath):
 
 def writeFileContents(filepath, contents, isBom):
     encoding = isBom and 'utf-8-sig' or 'utf-8'
+    if isBom:
+        print("BOM files must all be in UTF-8 as templates!!!")
     file = codecs.open(filepath, 'w', encoding)
     file.write(contents)
     file.close()
