@@ -8,7 +8,7 @@ def processTemplateForSpec(templateFilePath, spec, outputPath, dumpContents, isB
 
     fileWriter.createOrReplaceDirectoryWithFolder(templateFilePath, tempOutputDirectoryPath)
     templateRenderer.renderTemplate(tempOutputDirectoryPath, spec, isBom)
-    
+
     if dumpContents:
         fileWriter.dumpFolderContentsIntoDirectory(tempOutputDirectoryPath, outputPath)
         fileWriter.removeDirectory(tempOutputDirectoryPath)

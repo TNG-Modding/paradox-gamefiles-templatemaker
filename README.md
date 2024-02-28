@@ -38,26 +38,24 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 
 `./specs/moderateFactions.json`
 ```
-{
-    
-    "specs": [
-                {
-            "varname": "fanatic_militarist_xenophobe_faction",
-            "faction": "fanatic militarist xenophobe",
-            "Faction": "Fanatic Militarist Xenophobe",
-            "adjective": "fanatic militarist xenophobe",
-            "Adjective": "Fanatic Militarist Xenophobe",
-            "isMilitarist": 2,
-            "isPacifist": 0,
-            "isXenophobe": 1,
-            "isXenophile": 0,
-            "isEgalitarian": 0,
-            "isAuthoritarian": 0,
-            "isMaterialist": 0,
-            "isSpiritualist": 0
-        }
-    ]
-}
+[
+    {
+        "varname": "fanatic_militarist_xenophobe_faction",
+        "faction": "fanatic militarist xenophobe",
+        "Faction": "Fanatic Militarist Xenophobe",
+        "adjective": "fanatic militarist xenophobe",
+        "Adjective": "Fanatic Militarist Xenophobe",
+        "isMilitarist": 2,
+        "isPacifist": 0,
+        "isXenophobe": 1,
+        "isXenophile": 0,
+        "isEgalitarian": 0,
+        "isAuthoritarian": 0,
+        "isMaterialist": 0,
+        "isSpiritualist": 0
+    }
+]
+
 ```
 
 
@@ -67,19 +65,18 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 - Create an order for every template+spec pair. For instance, this order create a `common/pop_faction_type`
 
 ```
-{
-    "orders": [
-        {
-            "name": "Moderate Faction Defines",
-            "specFilePath": "./specs/moderateFactions.json",
-            "templateDirectoryPath": "./templates/faction", # The folder that contains the template files
-            "outputDirectoryPath": "../common/pop_faction_types", # Which folder to output to
-            "disabled": false, # Whether this order is ignored
-            "dumpContents": true, # Whether the template folder is copied into the output directory (false), or the contents are dumped into the output (true)
-            "isBom": false # Take UTF-8 template files and create UTF-8-BOM files for localisation
-        },
-    ]
-}
+[
+    {
+        "name": "Moderate Faction Defines",
+        "specFilePath": "./specs/moderateFactions.json",
+        "templateDirectoryPath": "./templates/faction", # The folder that contains the template files
+        "outputDirectoryPath": "../common/pop_faction_types", # Which folder to output to
+        "disabled": false, # Whether this order is ignored
+        "dumpContents": true, # Whether the template folder is copied into the output directory (false), or the contents are dumped into the output (true)
+        "isBom": false # Take UTF-8 template files and create UTF-8-BOM files for localisation
+    },
+]
+
 ```
 
 - Run `intemplator go` in the folder where the `intemplator.json` file is to generate files.

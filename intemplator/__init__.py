@@ -18,7 +18,7 @@ def run(template, input, output, isBom):
 
 @cli.command()
 def go():
-    """Process the intemplator.json file here."""
+    """Process the orders.json file here."""
     print("The Intemplator issues their orders!\n")
     templateProcessor.processOrders()
 
