@@ -79,4 +79,4 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 
 ```
 
-- Run `intemplator go` in the folder where the `intemplator.json` file is to generate files.
+- Run `intemplator go` in the folder where the `order.json` file is to generate files.
