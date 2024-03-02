@@ -13,7 +13,7 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 
 - Define a template file (one for the faction file, one for static modifiers, one for localisation, etc) using Jinja2 python syntax, like so:
 
-`"./templates/faction/{{varname}}_faction.txt"`
+`"./intemplator/templates/faction/{{varname}}_faction.txt"`
 ```
 ##############################
 # {{Faction}} Faction
@@ -36,7 +36,7 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 
 - Define specs files that contain content that will populate your spec. You must have "specs" defined. The content is otherwise arbitrary. For every item in the specs array, we will create a new file. The above template will create a fanatic militarist xenophobe faction.
 
-`./specs/moderateFactions.json`
+`./intemplator/specs/moderateFactions.json`
 ```
 [
     {
@@ -60,10 +60,10 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 
 
 
-- Create a folder called `intemplator` in the root directory of your mod repo.
-- Create `./intemplator/intemplator.json`
+- Create a folder called for our intemplator files in the root directory of your mod repo with an `orders.json` file in it.
 - Create an order for every template+spec pair. For instance, this order create a `common/pop_faction_type`
 
+`./intemplator/orders.json`
 ```
 [
     {
@@ -79,4 +79,4 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
 
 ```
 
-- Run `intemplator go` in the folder where the `intemplator.json` file is to generate files.
+- Run `intemplator go` in the folder where the `orders.json` file is to generate files.
