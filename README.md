@@ -34,7 +34,7 @@ Generate hundreds of modding files effortlessly using Jinja2 templates and json.
     ...
 ```
 
-- Define specs files that contain content that will populate your spec. You must have "specs" defined. The content is otherwise arbitrary. For every item in the specs array, we will create a new file. The above template will create a fanatic militarist xenophobe faction.
+- Define specs files that contain content that will populate your spec. The content must be an array of blobs. Each blob will get a piece of content per order. So far, we are creating a fanatic militarist xenophobe faction.
 
 `./intemplator/specs/moderateFactions.json`
 ```
